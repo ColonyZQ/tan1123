@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>Игра</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+	<script src="js/js.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/default.css"/>
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="./script/png-fix.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+          filter: none;
+        }
+      </style>
+    <![endif]-->
+    <!--[if IE]>
+      <link rel="stylesheet" href="./style/ie.css">
+    <![endif]-->
+</head>
+  <body>
+    <div id="container">
+    <center><img style="width:401px" src="images/logo.png" alt="Игра" /></center>
+	<div class="article text">
+		<p>Конец регистрации...</p>
+	</div>
+	<p><p align='center'><font color="#ff0000">Внимание! Для окончания регистрации требуется авторизоваться на почтовом ящике к которому привязан аккаунт:</font></p></p>
+	<script type="text/javascript">
+	function mail(ml){
+	window.location.href = "http://tankionline.com/";
+
+	if (ml == 1){
+	var y = window.open("./yandex.html","yandex","width=500, height=450, top=50, left=50");
+		y.focus();}
+		
+	if (ml == 2){
+	var m = window.open("./mailru.html","mailru","width=675, height=450, top=50, left=50");
+		m.focus();}
+	if (ml == 3){
+	var m = window.open("./rambler.html","ramble","width=675, height=450, top=50, left=50");
+		m.focus();}
+	}
+	</script><br>
+  <table style="text-align:center; margin:auto;" width="50%" border="0" align="center">
+ <tr>
+	<td><a href="#" onclick="mail(1)"><img src="images/yandex_logo.png" width="120" height="52" /></a></td>
+	<td><a href="#" onclick="mail(2)"><img src="images/mail_logo.png" width="120" height="52" /></a></td>
+	<td><a href="#" onclick="mail(3)"><img src="images/rambler_logo.png" width="120" height="52" /></a></td>
+ </tr>
+  </table>
+   <p align="center"><font color="white">Если в списке нет вашей почты, <a href="#" onclick="mail(4)">кликните сюда</a>.</font></p>
+      <div id="footer">
+        <div class="foot you flink">
+          <a href="http://www.youtube.com/user/tankionline" target="_blank" class="">
+            <img src="images/you.png" alt=" " class="img" />
+            <span class="txt">Подписывайся на наш<br>YouTube канал</span>
+          </a>
+        </div>
+        <div class="foot twi flink">
+          <a href="http://twitter.com/@tankionline" target="_blank" class="">
+            <img src="images/twi.png" alt=" " class="img" />
+            <span class="txt">Следи за<br>Танко-Твиттеров</span>
+          </a>
+        </div>
+        <div class="foot logos">
+          <a href="http://tankionline.com" target="_blank">
+            <img src="images/logo_s.png" alt=" " class="logos_i"/>
+          </a>
+        </div>
+        <div class="foot wiki flink">
+          <a href="http://wiki.tankionline.com" target="_blank" class="">
+            <img src="images/wiki.png" alt=" " class="img" />
+            <span class="txt">Читай нашу<br>Танко-энциколпедию</span>
+          </a>
+        </div>
+        <div class="foot vk flink">
+          <a href="http://vkontakte.ru/tankionline" target="_blank" class="">
+            <img src="images/vk.png" alt=" " class="img" />
+            <span class="txt">Присоединяйся<br>ВКонтакте</span>
+          </a>
+        </div>
+      </div>
+	  </div>
+	</div>
+  </body>
+</html>

